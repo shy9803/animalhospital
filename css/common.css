@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+/* 공통서식 
+
+  글자모양, 글자크기, 글자색상
+
+  하이퍼링크 텍스트 색상, 크기
+
+  서브페이지에 들어갈 공통 UI 구성요소 서식
+
+  버튼서식, INPUT, 내비게이션(상단, 하단)
+
+*/
+
+:root {
+  --base_color: #333;
+  --a_color: #525d9f; /* 강조(accent) */
+  --f_size16: 16px;
+}
+
+/* 구글 웹폰트 */
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap'); */ /* 적용X */
+/* Thin 100, ExtraLight 200, Light 300, Regular 400, Medium 500, SemiBold 600, Bold 700, ExtraBold 800, Black900 */
+
+body, a {
+  font-family: "Noto Sans KR", '돋움체', serif;
+  font-size: 12px;
+  color: var(--base_color);
+}
+
+/* 링크 텍스트, 컬러 */
+a {
+  text-decoration: none;
+}
+
+/* 상단헤더 콘텐츠 서식 */
+.h_top {
+  display: flex;
+  justify-content: end; /* 우측 배열 */
+}
+.lnb {
+  background-color: var(--a_color);
+}
+.lnb > ul {
+  display: flex;
+  width: 260px;
+  justify-content: space-around;
+}
+.lnb > ul > li {
+  line-height: 30px;
+  color: #fff;
+}
+.lnb > ul > li > a {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* h_bottom 서식 */
+.h_bottom {
+  width: 100%;
+  height: 80px;
+  position: relative;
+  background-color: #fff;
+}
+.h_bottom > h1 {
+  width: 1025px;
+  height: 80px;
+  margin: 0 auto;
+}
+.h_bottom > h1 > a {
+  position: relative;
+  z-index: 50;
+}
+.h_bottom > h1 img {
+  width: 300px;
+}
+.navi_wrap {
+  width: 100%;
+  height: 40px;
+  background-color: rgba(65, 56, 139, 0.8);
+  position: relative;
+  top: -40px;
+  overflow: hidden; /* 서브메뉴 안 보이게 함.*/
+  transition: 0.5s;
+}
+.navi_wrap:hover {
+  height: 280px;
+}
+
+.gnb {
+  width: 100%;
+  height: 40px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.gnb > ul {
+  display: flex;
+  justify-content: end;
+  width: 1025px;
+  margin: 0 auto;
+}
+.gnb > ul > li {
+  position: relative;
+}
+.gnb > ul > li > a {
+  padding: 0px 20px;
+  margin: 0 5px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.gnb > ul > li > a:hover {
+  color: #525d9f;
+}
+
+/* 서브메뉴 서식 */
+.sub {
+  position: absolute;
+  width: 100%;
+  top: 40px;
+}
+.sub > li {
+  line-height: 40px;
+  text-align: center;
+}
+.sub > li > a {
+  font-size: 14px;
+  color: #fff;
+}
+.sub > li > a:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* 푸터 서식 */
+footer {
+  background-color: #e7e7e7;
+  padding: 10px 0px;
+}
+.f_inner {
+  width: 1025px;
+  height: 120px;
+  margin: 0 auto;
+  position: relative;
+}
+.f_inner > h2 {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+.f_inner > nav {
+  padding-top: 30px;
+}
+/* .f_inner nav a {
+  margin: 0px 10px;
+} */
+.f_inner nav a:first-child {
+  padding-right: 13px;
+  border-right: 1px solid #333;
+}
+address {
+  padding-top: 10px;
+  line-height: 24px;
+}

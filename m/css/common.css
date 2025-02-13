@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+/* 공통서식 
+
+  글자모양, 글자크기, 글자색상
+  하이퍼링크 텍스트 색상, 크기
+
+  서브페이지에 들어갈 공통 UI 구성요소 서식
+  버튼서식, INPUT, 내비게이션(상단, 하단)
+*/
+
+:root {
+  --base_color: #333;
+  --a_color: #525d9f;
+  --f_size16: 16px;
+}
+
+body, a {
+  font-family: "Noto Sans KR", '돋움체', serif;
+  font-size: 12px;
+  color: var(--base_color);
+}
+
+/* 링크 텍스트, 컬러 */
+a {
+  text-decoration: none;
+}
+
+#toggle {
+  display: none;
+}
+/* 상단헤더 콘텐츠 서식 */
+header {
+  height: 60px;
+  position: relative;
+}
+header h1 {
+  padding-left: 10px;
+}
+header > h1 img {
+  height: 60px;
+}
+.toggle {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  cursor: pointer; /* 모바일-손가락 모양 상관X */
+}
+.toggle > .fa-bars {
+  font-size: 36px;
+  padding: 4px;
+  /* color: var(--base_color); */
+  color: #333;
+}
+
+/* 모바일 내비게이션 */
+.gnb {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .85);
+  position: fixed;
+  top: 0;
+  /* left: 0; */
+  left: 100%;
+  z-index: 10000;
+  padding-left: 20%;
+  transition: 0.5s;
+}
+.close_btn {
+  position: absolute;
+  left: 20px;
+  top: 40px;
+}
+.close_btn i {
+  font-size: 35px;
+  color: #fff;
+  transition: 0.5s; /*회전*/
+}
+/* .close_btn:hover {
+  animation: close_ani .4s;
+} */
+.close_btn:hover i.fa-times {
+  transform: rotate(180deg);
+}
+
+.gnb > ul {
+  width: 80%;
+  height: 100%;
+  background-color: #525d9f;
+  padding-top: 70px;
+}
+.gnb > ul > li {
+  border-bottom: 1px solid #fff;
+  text-indent: 10px;
+}
+.gnb > ul > li > a {
+  color: #fff;
+  font-size: 16px;
+  line-height: 40px;
+  font-weight: 300;
+  display: block;
+}
+
+.gnb .fa-angle-down {
+  float: right;
+  font-size: 20px;
+  transform: translate(-10px, 10px);
+}
+#toggle:checked + header > .gnb {
+  left: 0;
+}
+
+/* @keyframes close_ani {
+  100% {
+    transform: rotate(90deg);
+  }
+} */
+
+/* 서브메뉴 서식 */
+.gnb .sub{
+  display: none;
+  background-color: #707cc2;
+}
+.sub > li {
+  text-indent: 20px;
+}
+.sub a {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 33px;
+  color: #fff;
+  display: block;
+}
+
+/* 서브메뉴 활성화 */
+.sub.active {
+  display: block;
+}
+/* 서브메뉴 활성화시 회전 */
+.fa-angle-down.rotate {
+  transform: rotate(180deg) translate(0, -10px);
+}
+
+/* sns 아이콘 */
+nav i.fab {
+  position: absolute;
+  bottom: 40px;
+  color: #fff;
+  font-size: 26px;
+}
+i.fa-instagram-square {
+  left: 8px;
+}
+i.fa-facebook {
+  left: 38px;
+}
+i.fa-youtube {
+  left: 70px;
+}
+
+/* 푸터 서식 */
+footer {
+  background-color: #f4f4f4;
+  padding: 10px 0px;
+  text-align: center;
+}
+footer > h2 {
+  padding: 10px 0px;
+}
+footer > h2 img {
+  max-width: 220px;
+}
+
+/* PC버튼 서식 */
+.pc_btn {
+  border: 1px solid #808080;
+  padding: 4px 10px;
+}
+.t_btn {
+  padding: 6px 10px;
+  background-color: #696869;
+  color: #fff;
+  font-size: 26px;
+  border-radius: 3px;
+  position: fixed;
+  right: 10px;
+  bottom: 60px;
+  box-shadow: 0px 0px 3px #333;
+  z-index: 1000;
+}
+address {
+  font-size: 12px;
+  padding-top: 15px;
+  font-style: normal;
+  line-height: 20px;
+}

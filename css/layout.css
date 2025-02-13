@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* 레이아웃 서식 header, main, footer */
+
+header {
+  width: 100%; /*배경색이 좌우 풀로 채워지게 하기 위해서*/
+  z-index: 10000;
+}
+.h_inner {
+  height: 110px;
+  background-color: #4e4d5f;
+}
+.h_top {
+  width: 1025px; /*실제 홈페이지 크기*/
+  height: 30px;
+  margin: 0px auto;
+}
+
+/* 메인 영역 서식 */
+
+/* 그리드 레이아웃 3단 */
+.c_wrap {
+  width: 1025px;
+  margin: 15px auto;
+  display: flex; /*자식요소를 가로방향으로 배치*/
+  justify-content: space-between;
+}
+.c01 {
+  width: 340px;
+}
+.c02 {
+  width: 380px;
+}
+.c03 {
+  width: 260px;
+}
+
+/* 푸터 서식 */
